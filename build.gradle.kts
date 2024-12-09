@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "3.4.0"
     id("io.spring.dependency-management") version "1.1.6"
+    id("com.adarshr.test-logger") version "4.0.0"
 }
 
 group = "com.example"
@@ -25,4 +26,8 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+testlogger {
+    slowThreshold = 20
 }
